@@ -1,232 +1,223 @@
 {
-  "name-web":"STACKOVERFLOW MASKODING",
-  "author":"MASKODING",
-  "remove-comment-html":true,
-  "target":"https://m.tribunnews.com",
-  "name-folder-sitemap":"sitemap",
-  "element-remove":[
-    "script",
-    "noscript",
-    "meta",
-    "iframe",
-    "embed",
-    "ins",
-    "form",
-    ".js-consent-banner",
-    ".js-dismissable-hero",
-    ".js-sidebar-zone",
-    "#teams-promo",
-    ".quickedit"
-  ],
-  "costom-element-remove":[
-    {
-      "target":"stackoverflow.com",
-      "element-remove-selector":[
+    "name-web": "Windtalkers",
+    "author": "Windtalkers",
+    "remove-comment-html": true,
+    "target": "https://m.tribunnews.com",
+    "name-folder-sitemap": "sitemap",
+    "element-remove": [
+        "script",
+        "noscript",
+        "meta",
+        "iframe",
+        "embed",
+        "ins",
+        "form",
+        ".js-consent-banner",
         ".js-dismissable-hero",
-        ".lazy-loading"
-      ],
-      "replace-string":[
-        {
-          "target":"https://stackoverflow.com",
-          "replace":"${nameWeb}"
-        }
-      ]
-    },
-    {
-      "target":"m.tribunnews.com",
-      "element-remove-selector":[
-        ".baca",
-        ".op-interactive",
-        "#iklan_anchor",
-        ".box__reserved.noreserved.mt20.mb20",
-        ".box__reserved.mh10.nativeads",
-        ".box__reserved.mh27.sticky",
-        ".box__reserved.mh60.sticky",
-        ".box__reserved.ivideo_box",
-        ".box__reserved.fb_box.ac.mb20.bgwhite.bdr.facebook",
-        ".box__reserved.mh10"
-      ],
-      "replace-string":[]
-    },
-    {
-      "target":"www.itb.ac.id",
-      "element-remove-selector":[
-        ".box-header",
-        ".box-language",
-        ".section-10",
-        ".sidebar.active"
-      ],
-      "replace-string":[]
-    },
-    {
-      "target":"repositori.usu.ac.id",
-      "element-remove-selector":[
-        "header",
-        ".trail-wrapper",
-        "footer"
-      ],
-      "replace-string":[]
-    }
-  ],
-  "inject-element-head":[
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"name",
-          "value-attribute":"viewport"
+        ".js-sidebar-zone",
+        "#teams-promo",
+        ".quickedit"
+    ],
+    "costom-element-remove": [{
+            "target": "stackoverflow.com",
+            "element-remove-selector": [
+                ".js-dismissable-hero",
+                ".lazy-loading"
+            ],
+            "replace-string": [{
+                "target": "https://stackoverflow.com",
+                "replace": "${nameWeb}"
+            }]
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=5.0"
+            "target": "m.tribunnews.com",
+            "element-remove-selector": [
+                ".baca",
+                ".op-interactive"
+            ],
+            "replace-string": []
+        }, {
+            "target": "kompas.com",
+            "element-remove-selector": [
+                ".kcm",
+                ".ads-partner-wrap",
+                ".native-wrap",
+                ".overlay-desktop",
+                ".video-box-wrap"
+            ],
+            "replace-string": []
         }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"name",
-          "value-attribute":"description"
+    ],
+    "inject-element-head": [{
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "name",
+                    "value-attribute": "viewport"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=5.0"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${descriptionPost}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"charset",
-          "value-attribute":"UTF-8"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"og:type"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "name",
+                    "value-attribute": "description"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${descriptionPost}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"article"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"og:title"
+            "name-element": "meta",
+            "data-attribute": [{
+                "name-attribute": "charset",
+                "value-attribute": "UTF-8"
+            }],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${titlePost}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"og:description"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "og:type"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "article"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${descriptionPost}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"og:url"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "og:title"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${titlePost}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${urlPost}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"og:site_name"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "og:description"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${descriptionPost}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${nameWeb}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"article:published_time"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "og:url"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${urlPost}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${timePublish}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    },
-    {
-      "name-element":"meta",
-      "data-attribute":[
-        {
-          "name-attribute":"property",
-          "value-attribute":"article:author"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "og:site_name"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${nameWeb}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         },
         {
-          "name-attribute":"content",
-          "value-attribute":"${authorPost}"
-        }
-      ],
-      "data-innerHTML":"",
-      "position":"start"
-    }
-  ],
-  "inject-element-body":[
-    {
-      "name-element":"script",
-      "data-attribute":[
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "article:published_time"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${timePublish}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
+        },
         {
-          "name-attribute":"src",
-          "value-attribute":"/assets/inject.js"
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "property",
+                    "value-attribute": "article:author"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "${authorPost}"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
+        },
+        {
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "name",
+                    "value-attribute": "google-site-verification"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "DuIcW0A_k3_BMmYsyRGuxT979FxAkFCb-D-eCmVRvaM"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
+        }, {
+            "name-element": "meta",
+            "data-attribute": [{
+                    "name-attribute": "name",
+                    "value-attribute": "yandex-verification"
+                },
+                {
+                    "name-attribute": "content",
+                    "value-attribute": "b9145e99ac03b412"
+                }
+            ],
+            "data-innerHTML": "",
+            "position": "start"
         }
-      ],
-      "data-innerHTML":"",
-      "position":"end"
-    }
-  ]
+    ],
+    "inject-element-body": [{
+        "name-element": "script",
+        "data-attribute": [{
+            "name-attribute": "src",
+            "value-attribute": "/assets/inject.js"
+        }],
+        "data-innerHTML": "",
+        "position": "end"
+    }]
 }
