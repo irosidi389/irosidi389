@@ -170,7 +170,6 @@ const remakeUrlElementImg = async(dom, $, option) => {
                     const mapHref = parseUrl(hrefAttr);
                     const pathHref = mapHref.pathname + mapHref.query;
                     const dataReplace = "https://cdn.statically.io/img/" + mapHref.hostname + pathHref;
-                    console.log(dataReplace)
                     $(el).attr(option.remake, dataReplace);
                 } else {
                     if (isUrl(hrefAttr) == false) {
@@ -181,7 +180,6 @@ const remakeUrlElementImg = async(dom, $, option) => {
                         const protoHref = mapHref.protocol.replace(":", "-");
                         const pathHref = mapHref.pathname + mapHref.query;
                         const dataReplace = "https://cdn.statically.io/img/" + mapHref.hostname + pathHref;
-                        console.log(dataReplace)
                         $(el).attr(option.remake, dataReplace);
                     };
                 };
@@ -514,14 +512,14 @@ app.use(async(req, res, next) => {
                                                 re3 = new RegExp(re3, 'g');
                                                 dataXML = dataXML.replace(re3, originUrl + "/" + dataOrigin);
                                             };
-                                            let re4 = new RegExp("gasss:gazzz", 'g');
-                                            let re5 = new RegExp("gasss:gasss", 'g');
-                                            let re6 = new RegExp("gazzz:gasss", 'g');
-                                            let re7 = new RegExp("gazzz:gazzz", 'g');
-                                            dataXML = dataXML.replace(re4, "gazzz");
-                                            dataXML = dataXML.replace(re5, "gasss");
-                                            dataXML = dataXML.replace(re6, "gasss");
-                                            dataXML = dataXML.replace(re7, "gazzz");
+                                            let re4 = new RegExp("https:http", 'g');
+                                            let re5 = new RegExp("https:https", 'g');
+                                            let re6 = new RegExp("http:https", 'g');
+                                            let re7 = new RegExp("http:http", 'g');
+                                            dataXML = dataXML.replace(re4, "http");
+                                            dataXML = dataXML.replace(re5, "https");
+                                            dataXML = dataXML.replace(re6, "https");
+                                            dataXML = dataXML.replace(re7, "http");
                                             res.writeHead(200, {
                                                 "content-type": typeContent
                                             });
