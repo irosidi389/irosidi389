@@ -516,14 +516,14 @@ app.use(async(req, res, next) => {
                                             let re5 = new RegExp("https:https", 'g');
                                             let re6 = new RegExp("http:https", 'g');
                                             let re7 = new RegExp("http:http", 'g');
-                                            dataXML = dataXML.replace(re4, "http");
-                                            dataXML = dataXML.replace(re5, "https");
-                                            dataXML = dataXML.replace(re6, "https");
-                                            dataXML = dataXML.replace(re7, "http");
+                                            dataXML = dataXML.replace(re4, "zzz");
+                                            dataXML = dataXML.replace(re5, "sss");
+                                            dataXML = dataXML.replace(re6, "sss");
+                                            dataXML = dataXML.replace(re7, "zzz");
                                             res.writeHead(200, {
                                                 "content-type": typeContent
                                             });
-                                            res.end("zzz");
+                                            res.end("dataXML");
                                         } catch (e) {
                                             res.end("404");
                                         };
