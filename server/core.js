@@ -132,9 +132,9 @@ const remakeUrlElement = async(dom, $, option) => {
                         $(el).attr(option.remake, hrefAttr);
                     } else {
                         const mapHref = parseUrl(hrefAttr);
-                        const protoHref = mapHref.protocol.replace(":", "-");
+                        const protoHref = mapHref.protocol.replace("https:", "gasss-").replace("http:", "gazzz-");
                         const pathHref = mapHref.pathname + mapHref.query;
-                        const dataReplace = option.origin + "/newsss-" + "zzz" + protoHref + hostnameHref + pathHref;
+                        const dataReplace = option.origin + "/news-" + protoHref + hostnameHref + pathHref;
                         $(el).attr(option.remake, dataReplace);
                     };
                 };
@@ -293,9 +293,9 @@ app.use(async(req, res, next) => {
                 let dataOrigin = "";
                 if (urlPost.indexOf("news-") == 0) {
                     let dataLink = await urlPost.split("news-")[1];
-                    linkPost = await dataLink.replace("https-", "https://").replace("http-", "http://");
+                    linkPost = await dataLink.replace("gasss-", "https://").replace("gazzz-", "http://");
                     statusOrigin = false;
-                    dataOrigin = await "news-" + parseUrl(linkPost).origin.replace("https://", "https-").replace("http://", "http-");
+                    dataOrigin = await "news-" + parseUrl(linkPost).origin.replace("https://", "gasss-").replace("http://", "gazzz-");
                 };
                 if (isUrl(linkPost)) {
                     let getInfo = await curlLink(linkPost);
