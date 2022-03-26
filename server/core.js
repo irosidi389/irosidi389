@@ -523,7 +523,7 @@ app.use(async(req, res, next) => {
                                             res.writeHead(200, {
                                                 "content-type": typeContent
                                             });
-                                            res.end("dataXML");
+                                            res.end(dataXML);
                                         } catch (e) {
                                             res.end("404");
                                         };
