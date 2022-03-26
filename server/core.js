@@ -170,6 +170,7 @@ const remakeUrlElementImg = async(dom, $, option) => {
                     const mapHref = parseUrl(hrefAttr);
                     const pathHref = mapHref.pathname + mapHref.query;
                     const dataReplace = "https://cdn.statically.io/img/" + mapHref.hostname + pathHref;
+                    console.log(dataReplace)
                     $(el).attr(option.remake, dataReplace);
                 } else {
                     if (isUrl(hrefAttr) == false) {
@@ -180,6 +181,7 @@ const remakeUrlElementImg = async(dom, $, option) => {
                         const protoHref = mapHref.protocol.replace(":", "-");
                         const pathHref = mapHref.pathname + mapHref.query;
                         const dataReplace = "https://cdn.statically.io/img/" + mapHref.hostname + pathHref;
+                        console.log(dataReplace)
                         $(el).attr(option.remake, dataReplace);
                     };
                 };
