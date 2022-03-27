@@ -132,9 +132,9 @@ const remakeUrlElement = async(dom, $, option) => {
                         $(el).attr(option.remake, hrefAttr);
                     } else {
                         const mapHref = parseUrl(hrefAttr);
-                        const protoHref = mapHref.protocol.replace("https:", "gasss-").replace("http:", "gazzz-");
+                        const protoHref = mapHref.protocol.replace(":", "-");
                         const pathHref = mapHref.pathname + mapHref.query;
-                        const dataReplace = option.origin + "/news-" + protoHref + hostnameHref + pathHref;
+                        const dataReplace = option.origin + "/host-" + protoHref + hostnameHref + pathHref;
                         $(el).attr(option.remake, dataReplace);
                     };
                 };
@@ -205,7 +205,7 @@ app.use(async(req, res, next) => {
         if ("/ping" == req.url) {
             res.status(200);
             res.send("ok");
-        } else if (req.url.indexOf(dataSetting["name-folder-sitemap"]) > 0 && req.url.indexOf(".xml") > 0 && req.url.indexOf("/news-") == -1 && req.method === "GET") {
+        } else if (req.url.indexOf(dataSetting["name-folder-sitemap"]) > 0 && req.url.indexOf(".xml") > 0 && req.url.indexOf("/host-") == -1 && req.method === "GET") {
             let statusSitemap = false;
             let linkSubSitemap = "";
             targetSitemap.forEach(function(a) {
@@ -257,7 +257,7 @@ app.use(async(req, res, next) => {
                 "content-type": "text/plain; charset=UTF-8"
             });
             res.end(data);
-        } else if (req.url.split("/assets/")[1] == undefined == false && req.method === "GET" && req.url.indexOf("/news-") == -1) {
+        } else if (req.url.split("/assets/")[1] == undefined == false && req.method === "GET" && req.url.indexOf("/host-") == -1) {
             let dataFile = req.url.split("/assets/")[1];
             if (dataFile.length > 0) {
                 let files = await getListFile("assets");
@@ -291,11 +291,11 @@ app.use(async(req, res, next) => {
                 let linkPost = await dataSetting["target"] + "/" + urlPost;
                 let statusOrigin = true;
                 let dataOrigin = "";
-                if (urlPost.indexOf("news-") == 0) {
-                    let dataLink = await urlPost.split("news-")[1];
-                    linkPost = await dataLink.replace("gasss-", "https://").replace("gazzz-", "http://");
+                if (urlPost.indexOf("host-") == 0) {
+                    let dataLink = await urlPost.split("host-")[1];
+                    linkPost = await dataLink.replace("https-", "https://").replace("http-", "http://");
                     statusOrigin = false;
-                    dataOrigin = await "news-" + parseUrl(linkPost).origin.replace("https://", "gasss-").replace("http://", "gazzz-");
+                    dataOrigin = await "host-" + parseUrl(linkPost).origin.replace("https://", "https-").replace("http://", "http-");
                 };
                 if (isUrl(linkPost)) {
                     let getInfo = await curlLink(linkPost);
